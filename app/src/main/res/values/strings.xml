@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">FragranceCart</string>
+    <string name="quantity">Quantity</string>
+    <string name="brew_tea">ADD TO CART</string>
+    <string name="initial_cost">$0.00</string>
+    <string name="initial_quantity_value">1</string>
+    <string name="total">Total</string>
+    <string name="price">PRICE: </string>
+    <string name="action_cart">Shopping Cart</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="add">Add</string>
+    <string name="cancel">Cancel</string>
+    <string name="fragrance_name">Fragrance Name</string>
+
+</resources>

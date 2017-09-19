@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fragrance_title_padding">10dp</dimen>
+    <dimen name="fragrance_title">15dp</dimen>
+    <dimen name="fragrance_cover_height">160dp</dimen>
+    <dimen name="card_movie_radius">0dp</dimen>
+    <dimen name="card_margin">5dp</dimen>
+    <dimen name="user_rating_padding_bottom">5dp</dimen>
+    <dimen name="user_rating">12dp</dimen>
+    <dimen name="default_gap">16dp</dimen>
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="badge_text_size">8sp</dimen>
+    <dimen name="item_space">8dp</dimen>
+
+</resources>

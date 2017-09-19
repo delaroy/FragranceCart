@@ -1,0 +1,110 @@
+{
+  "fragrances": [
+    {
+      "fragranceName": "Versace Eros",
+      "description": "Versace Eros is cologne with a great clean aroma scent that's not too intense, yet moderate scent that lasts all day.",
+      "imageUrl": "versace-eros.png",
+      "price": 41.29,
+      "userRating": 5
+    },
+    {
+      "fragranceName": "Burberry",
+      "description": "Smells wonderful. Not too strong and last longer",
+      "imageUrl": "Burberry.png",
+      "price": 27.29,
+      "userRating": 4
+    },
+    {
+      "fragranceName": "Chrome",
+      "description": "A flowers, citrus, maritime wonderful scent unique and one of the kind",
+      "imageUrl": "chrome.png",
+      "price": 25.89,
+      "userRating": 4
+    },
+    {
+      "fragranceName": "Mont Blanc Legend",
+      "description": "MonteBlanc legend. It's definitely a scent anyone in your presence will remember.",
+      "imageUrl": "mont-blanc.png",
+      "price": 32.19,
+      "userRating": 5
+    },
+    {
+      "fragranceName": "Euphoria",
+      "description": "Euphoria is a beautiful fragrance, for a romantic stay home dinner fragrance.",
+      "imageUrl": "Euphoria.png",
+      "price": 34.99,
+      "userRating": 5
+    },
+    {
+      "fragranceName": "Sauvage",
+      "description": "When you add Sauvage to your daily routine, you are choosing to surround yourself in a raw and fresh signature scent",
+      "imageUrl": "sauvage.png",
+      "price": 108.49,
+      "userRating": 4
+    },
+    {
+      "fragranceName": "Cerruti 1881",
+      "description": "A spicy blend of herbs, patchouli and fragran",
+      "imageUrl": "cerruti-1881.png",
+      "price": 18.19,
+      "userRating": 4
+    },
+    {
+      "fragranceName": "Pierre Cardin",
+      "description": "Fresh and spicy, a scent that lingers, very ",
+      "imageUrl": "pierre-cardin.png",
+      "price": 10.49,
+      "userRating": 4
+    },
+    {
+      "fragranceName": "Jimmy Choo",
+      "description": "A daring fragrance with an addictive gourmand drydown",
+      "imageUrl": "jimmy-choo.png",
+      "price": 41.99,
+      "userRating": 4
+    },
+    {
+      "fragranceName": "Polo Red",
+      "description": "Embrace all things red with Polo Red from the fragrance design house of Ralph Lauren",
+      "imageUrl": "ralph-lauren.png",
+      "price": 55.29,
+      "userRating": 5
+    },
+    {
+      "fragranceName": "Vera Wang",
+      "description": "A subtle blend of floral scents, Vera Wang for women is a versatile fragrance and a suitable accessory for both casual and formal wear",
+      "imageUrl": "vera-wang.png",
+      "price": 22.39,
+      "userRating": 5
+    },
+    {
+      "fragranceName": "Black Opium",
+      "description": "Choose a scent that is luxurious and opulent when you spritz on Black Opium eau de parfum spray",
+      "imageUrl": "black-opium.png",
+      "price": 75.59,
+      "userRating": 5
+    },
+    {
+      "fragranceName": "Eternity Aqua",
+      "description": "Men who want to wear a crisp blend of aquatic and woody scents choose Eternity Aqua eau de toilette by Calvin Klein.",
+      "imageUrl": "eternity-aqua.png",
+      "price": 30.09,
+      "userRating": 4
+    },
+    {
+      "fragranceName": "Gucci Guilty",
+      "description": "Explore and expand your boundaries with this Gucci Guilty eau de toilette spray, which was introduced in 2015 by Gucci",
+      "imageUrl": "gucci-guilty.png",
+      "price": 46.69,
+      "userRating": 5
+    },
+    {
+      "fragranceName": "Dkny Be Delicious",
+      "description": "Pay homage to your upbeat personality when you wear this Be Delicious eau de parfum spray for women from DKNY",
+      "imageUrl": "dkny-be-delicious.png",
+      "price": 30.79,
+      "userRating": 5
+    }
+  ]
+}
+

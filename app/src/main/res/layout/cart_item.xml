@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/cartImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:fontFamily="sans-serif"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+
+
+    <TextView
+        android:id="@+id/fragranceName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="20sp"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:layout_toRightOf="@+id/cartImage"
+        android:layout_marginTop="20dip"
+        tools:text="@string/fragrance_name"
+        />
+
+    <TextView
+        android:id="@+id/quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:layout_marginTop="@dimen/item_space"
+        android:textSize="16sp"
+        tools:text="@string/quantity"
+        android:layout_below="@+id/fragranceName"
+        android:layout_toEndOf="@+id/cartImage"
+        android:layout_toRightOf="@+id/cartImage" />
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:layout_marginTop="@dimen/item_space"
+        android:textSize="16sp"
+        tools:text="@string/price"
+        android:layout_below="@+id/quantity"
+        android:layout_toEndOf="@+id/cartImage"
+        android:layout_toRightOf="@+id/cartImage" />
+
+</RelativeLayout>
