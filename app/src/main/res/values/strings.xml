@@ -11,5 +11,9 @@
     <string name="add">Add</string>
     <string name="cancel">Cancel</string>
     <string name="fragrance_name">Fragrance Name</string>
+    <string name="item_added">Item Added to WishList</string>
+    <string name="item_removed">Item Removed from WishList</string>
+    <string name="toolbar_favorite_snack">"Toolbar favorite clicked: "</string>
+    <string name="wish_list">Wish List</string>
 
 </resources>

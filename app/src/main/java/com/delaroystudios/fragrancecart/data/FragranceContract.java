@@ -31,6 +31,8 @@ public class FragranceContract {
 
     public static final String PATH_CART= "cart-path";
 
+    public static final String PATH_WISH= "wish-path";
+
 
     /**
      * Inner class that defines constant values for the fragrance database table.
@@ -42,6 +44,8 @@ public class FragranceContract {
         public static final Uri CONTENT_URI = Uri.withAppendedPath(BASE_CONTENT_URI, PATH_FRAGRANCE);
 
         public static final Uri CONTENT_URI_CART = Uri.withAppendedPath(BASE_CONTENT_URI, PATH_CART);
+
+        public static final Uri CONTENT_URI_WISH = Uri.withAppendedPath(BASE_CONTENT_URI, PATH_WISH);
 
         /**
          * The MIME type of the {@link #CONTENT_URI} for a list of fragrance.
@@ -61,6 +65,9 @@ public class FragranceContract {
         //cart table name
         public final static String CART_TABLE = "cart";
 
+        //wishlist table name
+        public final static String WISH_TABLE = "wishlist";
+
         /**
          * Unique ID number for the fragrance (only for use in the database table).
          *
@@ -69,6 +76,8 @@ public class FragranceContract {
         public final static String _ID = BaseColumns._ID;
 
         public final static String _CARTID = BaseColumns._ID;
+
+        public final static String _WISHID = BaseColumns._ID;
 
         /**
          * Name of the fragrance.
@@ -81,11 +90,18 @@ public class FragranceContract {
         public final static String COLUMN_PRICE = "price";
         public final static String COLUMN_USERRATING = "userrating";
 
-
+        //COLUMNS FOR CART
         public final static String COLUMN_CART_NAME = "cartfragrancename";
         public final static String COLUMN_CART_IMAGE = "cartimageurl";
         public final static String COLUMN_CART_QUANTITY = "cartquantity";
         public final static String COLUMN_CART_TOTAL_PRICE = "carttotalprice";
+
+        //COLUMNS FOR WISHLIST
+        public final static String COLUMN_WISH_NAME = "wish_fragrancename";
+        public final static String COLUMN_WISH_DESCRIPTION = "wish_description";
+        public final static String COLUMN_WISH_IMAGE = "wish_imageurl";
+        public final static String COLUMN_WISH_PRICE = "wish_price";
+        public final static String COLUMN_WISH_USERRATING = "wish_userrating";
 
     }
 

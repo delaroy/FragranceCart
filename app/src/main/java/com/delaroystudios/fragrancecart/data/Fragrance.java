@@ -17,6 +17,7 @@ public class Fragrance {
 
 
     public Fragrance(Cursor cursor) {
+        this.id = cursor.getInt(cursor.getColumnIndex(FragranceContract.FragranceEntry._ID));
         this.name = cursor.getString(cursor.getColumnIndex(FragranceContract.FragranceEntry.COLUMN_NAME));
         this.description = cursor.getString(cursor.getColumnIndex(FragranceContract.FragranceEntry.COLUMN_DESCRIPTION));
         this.imageUrl = cursor.getString(cursor.getColumnIndex(FragranceContract.FragranceEntry.COLUMN_IMAGE));

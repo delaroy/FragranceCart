@@ -1,168 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
 
-    <RelativeLayout
-        android:id="@+id/detail"
+    <android.support.design.widget.AppBarLayout
+        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:theme="@style/AppTheme.AppBarOverlay">
 
-        <ImageView
-            android:id="@+id/fragranceImage"
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:padding="@dimen/activity_horizontal_margin"
-            android:scaleType="centerInside"
-            android:background="@color/fragranceColor"/>
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-        <TextView
-            android:id="@+id/description"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/activity_vertical_margin"
-            android:textSize="15sp"
-            tools:text="Cool"
-            android:layout_marginTop="33dp"
-            android:layout_below="@+id/fragranceImage"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true" />
+    </android.support.design.widget.AppBarLayout>
 
-        <RatingBar
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/CustomRatingLevel"
-            android:id="@+id/ratingLevel"
-            android:layout_below="@+id/description"
-            android:numStars="5"
-            android:isIndicator="true"/>
+    <include layout="@layout/fragrance_details_layout" />
 
-        <TableLayout
-            android:layout_width="fill_parent"
-            android:id="@+id/priceLinearLayout"
-            android:layout_below="@+id/ratingLevel"
-            android:padding="@dimen/activity_horizontal_margin"
-            android:layout_height="wrap_content">
-
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="2"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="PRICE"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="6"
-                android:textSize="16sp"
-                android:hint="PRICE"
-                android:gravity="center"
-                android:layout_height="wrap_content"
-                android:id="@+id/price" />
-        </TableRow>
-
-        </TableLayout>
-        <LinearLayout
-            android:id="@+id/quantityLinearLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_below="@+id/priceLinearLayout"
-            android:paddingBottom="@dimen/default_gap"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="@dimen/default_gap">
-
-            <TextView
-                android:id="@+id/quantityLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/quantity" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/decrement_button"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:background="@null"
-                    android:onClick="decrement"
-                    android:textSize="18sp"
-                    android:text="-" />
-
-                <TextView
-                    android:id="@+id/quantity_text_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:paddingLeft="8dp"
-                    android:paddingRight="8dp"
-                    android:text="@string/initial_quantity_value"
-                    android:textColor="@android:color/black"
-                    android:textSize="22sp" />
-
-                <Button
-                    android:id="@+id/increment_button"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:background="@null"
-                    android:onClick="increment"
-                    android:textSize="22sp"
-                    android:text="+" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/quantityTotal"
-            android:paddingTop="@dimen/default_gap"
-            android:layout_below="@+id/quantityLinearLayout"
-            android:paddingBottom="@dimen/default_gap"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/total"
-                style="@style/FormTextStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="@string/total" />
-
-            <TextView
-                android:id="@+id/cost_text_view"
-                style="@style/FormTextStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center" />
-
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/cart_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/quantityTotal"
-            android:layout_gravity="center"
-            android:onClick="addToCart"
-            android:text="@string/brew_tea" />
-
-    </RelativeLayout>
-
-</ScrollView>
+</android.support.design.widget.CoordinatorLayout>

@@ -16,6 +16,7 @@ import com.delaroystudios.fragrancecart.data.Fragrance;
 import com.delaroystudios.fragrancecart.data.FragranceContract;
 
 import static com.delaroystudios.fragrancecart.DetailActivity.FRAGRANCE_DESCRIPTION;
+import static com.delaroystudios.fragrancecart.DetailActivity.FRAGRANCE_ID;
 import static com.delaroystudios.fragrancecart.DetailActivity.FRAGRANCE_IMAGE;
 import static com.delaroystudios.fragrancecart.DetailActivity.FRAGRANCE_NAME;
 import static com.delaroystudios.fragrancecart.DetailActivity.FRAGRANCE_PRICE;
@@ -47,6 +48,7 @@ public class FragranceAdapter extends RecyclerView.Adapter<FragranceAdapter.View
                     int pos = getAdapterPosition();
                     if (pos != RecyclerView.NO_POSITION){
                         Intent intent = new Intent(context, DetailActivity.class);
+                        intent.putExtra(FRAGRANCE_ID, getItem(pos).id);
                         intent.putExtra(FRAGRANCE_NAME, getItem(pos).name);
                         intent.putExtra(FRAGRANCE_DESCRIPTION, getItem(pos).description);
                         intent.putExtra(FRAGRANCE_PRICE, getItem(pos).price);

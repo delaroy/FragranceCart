@@ -90,6 +90,11 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                 startActivity(intent);
                 return true;
             }
+            case R.id.wish: {
+                Intent intent = new Intent(this, WishListActivity.class);
+                startActivity(intent);
+                return true;
+            }
         }
         return super.onOptionsItemSelected(item);
     }

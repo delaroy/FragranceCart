@@ -31,6 +31,12 @@ public class FragranceProvider extends ContentProvider {
     /** URI matcher code for the content URI for a single cart in the cart table */
     private static final int CART_ID = 103;
 
+    /** URI matcher code for the content URI for the wishlist table */
+    private static final int WISH = 104;
+
+    /** URI matcher code for the content URI for a single wish in the cart table */
+    private static final int WISH_ID = 105;
+
     /**
      * UriMatcher object to match a content URI to a corresponding code.
      * The input passed into the constructor represents the code to return for the root URI.
@@ -51,6 +57,8 @@ public class FragranceProvider extends ContentProvider {
 
         sUriMatcher.addURI(FragranceContract.CONTENT_AUTHORITY, FragranceContract.PATH_CART, CART);
 
+        sUriMatcher.addURI(FragranceContract.CONTENT_AUTHORITY, FragranceContract.PATH_WISH, WISH);
+
         // The content URI of the form "content://com.example.android.fragrance/fragrance/#" will map to the
         // integer code {@link #fragrance_ID}. This URI is used to provide access to ONE single row
         // of the fragrance table.
@@ -60,6 +68,7 @@ public class FragranceProvider extends ContentProvider {
         // "content://com.example.android.fragrance/fragrance" (without a number at the end) doesn't match.
         sUriMatcher.addURI(FragranceContract.CONTENT_AUTHORITY, FragranceContract.PATH_FRAGRANCE + "/#", FRAGRANCE_ID);
         sUriMatcher.addURI(FragranceContract.CONTENT_AUTHORITY, FragranceContract.PATH_CART + "/#", CART_ID);
+        sUriMatcher.addURI(FragranceContract.CONTENT_AUTHORITY, FragranceContract.PATH_WISH + "/#", WISH_ID);
 
     }
 
@@ -95,6 +104,12 @@ public class FragranceProvider extends ContentProvider {
                 cursor = database.query(FragranceContract.FragranceEntry.CART_TABLE, projection, selection, selectionArgs,
                         null, null, sortOrder);
                 break;
+
+            case WISH:
+                cursor = database.query(FragranceContract.FragranceEntry.WISH_TABLE, projection, selection, selectionArgs,
+                        null, null, sortOrder);
+                break;
+
             case CART_ID:
                 selection = FragranceContract.FragranceEntry._CARTID + "=?";
                 selectionArgs = new String[] { String.valueOf(ContentUris.parseId(uri)) };
@@ -102,6 +117,15 @@ public class FragranceProvider extends ContentProvider {
                 // This will perform a query on the fragrance table where the _id equals 3 to return a
                 // Cursor containing that row of the table.
                 cursor = database.query(FragranceContract.FragranceEntry.CART_TABLE, projection, selection, selectionArgs,
+                        null, null, sortOrder);
+                break;
+            case WISH_ID:
+                selection = FragranceContract.FragranceEntry._WISHID + "=?";
+                selectionArgs = new String[] { String.valueOf(ContentUris.parseId(uri)) };
+
+                // This will perform a query on the fragrance table where the _id equals 3 to return a
+                // Cursor containing that row of the table.
+                cursor = database.query(FragranceContract.FragranceEntry.WISH_TABLE, projection, selection, selectionArgs,
                         null, null, sortOrder);
                 break;
             case FRAGRANCE_ID:
@@ -148,6 +172,10 @@ public class FragranceProvider extends ContentProvider {
         switch (match) {
             case FRAGRANCES:
                 return insertCart(uri, contentValues);
+
+            case WISH:
+                return insertWish(uri, contentValues);
+
             default:
                 throw new IllegalArgumentException("Insertion is not supported for " + uri);
         }
@@ -173,6 +201,26 @@ public class FragranceProvider extends ContentProvider {
         return ContentUris.withAppendedId(uri, id);
     }
 
+    private Uri insertWish(Uri uri, ContentValues values) {
+
+        // Get writeable database
+        SQLiteDatabase database = fragranceDbHelper.getWritableDatabase();
+
+        // Insert the new cart with the given values
+        long id = database.insert(FragranceContract.FragranceEntry.WISH_TABLE, null, values);
+        // If the ID is -1, then the insertion failed. Log an error and return null.
+        if (id == -1) {
+            Log.e(LOG_TAG, "Failed to insert row for " + uri);
+            return null;
+        }
+
+        // Notify all listeners that the data has changed for the cart content URI
+        getContext().getContentResolver().notifyChange(uri, null);
+
+        // Return the new URI with the ID (of the newly inserted row) appended at the end
+        return ContentUris.withAppendedId(uri, id);
+    }
+
     @Override
     public int delete(@NonNull Uri uri, @Nullable String s, @Nullable String[] strings) {
         // Get access to the database and write URI matching code to recognize a single item
@@ -181,6 +229,7 @@ public class FragranceProvider extends ContentProvider {
         int match = sUriMatcher.match(uri);
         // Keep track of the number of deleted tasks
         int cartDeleted; // starts as 0
+
 
         // Write the code to delete a single row of data
         // [Hint] Use selections to delete an item by its row ID
@@ -191,6 +240,12 @@ public class FragranceProvider extends ContentProvider {
                 String id = uri.getPathSegments().get(1);
                 // Use selections/selectionArgs to filter for this ID
                 cartDeleted = db.delete(FragranceContract.FragranceEntry.CART_TABLE, "_id=?", new String[]{id});
+                break;
+            case WISH_ID:
+                // Get the task ID from the URI path
+                String wishId = uri.getPathSegments().get(1);
+                // Use selections/selectionArgs to filter for this ID
+                cartDeleted = db.delete(FragranceContract.FragranceEntry.WISH_TABLE, "_id=?", new String[]{wishId});
                 break;
             default:
                 throw new UnsupportedOperationException("Unknown uri: " + uri);
