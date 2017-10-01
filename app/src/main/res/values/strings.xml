@@ -15,5 +15,6 @@
     <string name="item_removed">Item Removed from WishList</string>
     <string name="toolbar_favorite_snack">"Toolbar favorite clicked: "</string>
     <string name="wish_list">Wish List</string>
+    <string name="wish_list_branch">Wish List</string>
 
 </resources>
