@@ -65,6 +65,7 @@ public class DetailActivity extends AppCompatActivity {
     private int mNotificationsCount = 0;
     Button addToCartButton;
 
+    //TODO
     MaterialFavoriteButton toolbarFavorite;
     Toolbar toolbar;
     final ContentValues wishValues = new ContentValues();
@@ -130,6 +131,7 @@ public class DetailActivity extends AppCompatActivity {
 
 
         //in the toolbar
+        //TODO
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar ab = getSupportActionBar();
@@ -249,6 +251,7 @@ public class DetailActivity extends AppCompatActivity {
                 Intent intent = new Intent(this, CartActivity.class);
                 startActivity(intent);
                 return true;
+            //TODO
             case android.R.id.home:
                 this.onBackPressed();
                 return true;

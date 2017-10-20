@@ -89,6 +89,7 @@ public class FragranceContract {
         public final static String COLUMN_IMAGE = "imageurl";
         public final static String COLUMN_PRICE = "price";
         public final static String COLUMN_USERRATING = "userrating";
+        public final static String COLUMN_ITEMID = "itemid";
 
         //COLUMNS FOR CART
         public final static String COLUMN_CART_NAME = "cartfragrancename";
@@ -96,6 +97,7 @@ public class FragranceContract {
         public final static String COLUMN_CART_QUANTITY = "cartquantity";
         public final static String COLUMN_CART_TOTAL_PRICE = "carttotalprice";
 
+        //TODO
         //COLUMNS FOR WISHLIST
         public final static String COLUMN_WISH_NAME = "wish_fragrancename";
         public final static String COLUMN_WISH_DESCRIPTION = "wish_description";

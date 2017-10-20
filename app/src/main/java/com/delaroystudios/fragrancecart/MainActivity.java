@@ -25,6 +25,7 @@ import android.widget.TextView;
 import com.delaroystudios.fragrancecart.count.Utils;
 import com.delaroystudios.fragrancecart.data.FragranceContract;
 import com.delaroystudios.fragrancecart.data.FragranceDbHelper;
+import com.delaroystudios.fragrancecart.sync.FragranceSyncAdapter;
 import com.joanzapata.iconify.widget.IconButton;
 
 import static com.delaroystudios.fragrancecart.R.id.cart_badge;
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         FragranceDbHelper dbHelper = new FragranceDbHelper(this);
         mDb = dbHelper.getWritableDatabase();
 
+        FragranceSyncAdapter.initializeSyncAdapter(this);
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
@@ -61,6 +63,8 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         recyclerView.setAdapter(fragranceAdapter);
 
         getLoaderManager().initLoader(FRAGRANCE_LOADER,null,this);
+
+
 
         new FetchCountTask().execute();
     }
@@ -90,6 +94,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                 startActivity(intent);
                 return true;
             }
+            //TODO
             case R.id.wish: {
                 Intent intent = new Intent(this, WishListActivity.class);
                 startActivity(intent);

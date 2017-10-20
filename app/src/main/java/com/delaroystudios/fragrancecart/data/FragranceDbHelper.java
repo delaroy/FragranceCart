@@ -59,7 +59,8 @@ public class FragranceDbHelper extends SQLiteOpenHelper {
                 FragranceContract.FragranceEntry.COLUMN_DESCRIPTION + " TEXT NOT NULL, " +
                 FragranceContract.FragranceEntry.COLUMN_IMAGE + " TEXT NOT NULL, " +
                 FragranceContract.FragranceEntry.COLUMN_PRICE + " REAL NOT NULL, " +
-                FragranceContract.FragranceEntry.COLUMN_USERRATING + " INTEGER NOT NULL " + " );";
+                FragranceContract.FragranceEntry.COLUMN_USERRATING + " INTEGER NOT NULL, " +
+                FragranceContract.FragranceEntry.COLUMN_ITEMID + " INTEGER UNIQUE NOT NULL " + " );";
 
         final String SQL_CREATE_CART_FRAGRANCE_TABLE = "CREATE TABLE " + FragranceContract.FragranceEntry.CART_TABLE + " (" +
                 FragranceContract.FragranceEntry._CARTID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -68,6 +69,7 @@ public class FragranceDbHelper extends SQLiteOpenHelper {
                 FragranceContract.FragranceEntry.COLUMN_CART_QUANTITY + " INTEGER NOT NULL, " +
                 FragranceContract.FragranceEntry.COLUMN_CART_TOTAL_PRICE + " REAL NOT NULL " + " );";
 
+        //TODO
         final String SQL_CREATE_WISHLIST_FRAGRANCE_TABLE = "CREATE TABLE " + FragranceContract.FragranceEntry.WISH_TABLE + " (" +
                 FragranceContract.FragranceEntry._WISHID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                 FragranceContract.FragranceEntry.COLUMN_WISH_NAME + " TEXT UNIQUE NOT NULL, " +
@@ -84,14 +86,14 @@ public class FragranceDbHelper extends SQLiteOpenHelper {
         Log.d(TAG, "Database Created Successfully" );
 
 
-        try {
+       /* try {
             readFragrancesFromResources(db);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
+*/
 
     }
 
@@ -105,7 +107,7 @@ public class FragranceDbHelper extends SQLiteOpenHelper {
     }
 
 
-    private void readFragrancesFromResources(SQLiteDatabase db) throws IOException, JSONException {
+    /*private void readFragrancesFromResources(SQLiteDatabase db) throws IOException, JSONException {
         //db = this.getWritableDatabase();
         StringBuilder builder = new StringBuilder();
         InputStream in = mResources.openRawResource(R.raw.fragrance);
@@ -169,6 +171,6 @@ public class FragranceDbHelper extends SQLiteOpenHelper {
             e.printStackTrace();
         }
     }
-
+*/
 
 }

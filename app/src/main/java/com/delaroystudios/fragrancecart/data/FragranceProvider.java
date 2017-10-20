@@ -31,10 +31,11 @@ public class FragranceProvider extends ContentProvider {
     /** URI matcher code for the content URI for a single cart in the cart table */
     private static final int CART_ID = 103;
 
+    //TODO
     /** URI matcher code for the content URI for the wishlist table */
     private static final int WISH = 104;
 
-    /** URI matcher code for the content URI for a single wish in the cart table */
+    /** URI matcher code for the content URI for a single wish in the wish table */
     private static final int WISH_ID = 105;
 
     /**
@@ -171,6 +172,9 @@ public class FragranceProvider extends ContentProvider {
         final int match = sUriMatcher.match(uri);
         switch (match) {
             case FRAGRANCES:
+                return insertFragrance(uri, contentValues);
+
+            case CART:
                 return insertCart(uri, contentValues);
 
             case WISH:
@@ -179,6 +183,27 @@ public class FragranceProvider extends ContentProvider {
             default:
                 throw new IllegalArgumentException("Insertion is not supported for " + uri);
         }
+    }
+
+
+    private Uri insertFragrance(Uri uri, ContentValues values) {
+
+        // Get writeable database
+        SQLiteDatabase database = fragranceDbHelper.getWritableDatabase();
+
+        // Insert the new cart with the given values
+        long id = database.insert(FragranceContract.FragranceEntry.TABLE_NAME, null, values);
+        // If the ID is -1, then the insertion failed. Log an error and return null.
+        if (id == -1) {
+            Log.e(LOG_TAG, "Failed to insert row for " + uri);
+            return null;
+        }
+
+        // Notify all listeners that the data has changed for the fragrance content URI
+        getContext().getContentResolver().notifyChange(uri, null);
+
+        // Return the new URI with the ID (of the newly inserted row) appended at the end
+        return ContentUris.withAppendedId(uri, id);
     }
 
     private Uri insertCart(Uri uri, ContentValues values) {
