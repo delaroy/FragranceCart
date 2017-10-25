@@ -1,0 +1,239 @@
+{
+  "project_info": {
+    "project_number": "419763955138",
+    "firebase_url": "https://androidapps-326ee.firebaseio.com",
+    "project_id": "androidapps-326ee",
+    "storage_bucket": "androidapps-326ee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419763955138:android:89c307a9a159fcc9",
+        "android_client_info": {
+          "package_name": "com.delaroystudios.streekon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "419763955138-qhgtmugjv1ivjpv3s9uhcfm8l0a9fgrk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.delaroystudios.streekon",
+            "certificate_hash": "20ecd9fd995457fac71878e08b31c779b242c748"
+          }
+        },
+        {
+          "client_id": "419763955138-a8lb3bcou7hk67krp9eegq9haniuo9b5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQY6Z2TJGsaxFAQOhVBEmMYm49_tQ0Pvg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "419763955138-a8lb3bcou7hk67krp9eegq9haniuo9b5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419763955138:android:a24ef71d4cce612c",
+        "android_client_info": {
+          "package_name": "com.delaroystudios.fcmmysql"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "419763955138-70gs8akskmeced7kkkgleauc16olamni.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.delaroystudios.fcmmysql",
+            "certificate_hash": "f191ef43cafa7b031d74c507aae852b1c42873b5"
+          }
+        },
+        {
+          "client_id": "419763955138-a8lb3bcou7hk67krp9eegq9haniuo9b5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQY6Z2TJGsaxFAQOhVBEmMYm49_tQ0Pvg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "419763955138-a8lb3bcou7hk67krp9eegq9haniuo9b5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419763955138:android:558e0423378bf2c7",
+        "android_client_info": {
+          "package_name": "com.mobile.creoconsulting.unity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "419763955138-ip21p5muku9642lukj22b9j5hjhan1kj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mobile.creoconsulting.unity",
+            "certificate_hash": "f191ef43cafa7b031d74c507aae852b1c42873b5"
+          }
+        },
+        {
+          "client_id": "419763955138-a8lb3bcou7hk67krp9eegq9haniuo9b5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQY6Z2TJGsaxFAQOhVBEmMYm49_tQ0Pvg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "419763955138-a8lb3bcou7hk67krp9eegq9haniuo9b5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419763955138:android:9784b53e0be739dd",
+        "android_client_info": {
+          "package_name": "com.chataround"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "419763955138-8p5bh1b29mevei54b49n8nqndhd74n9c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.chataround",
+            "certificate_hash": "8741e088ec16e22d15c91f052df7ddaeee777719"
+          }
+        },
+        {
+          "client_id": "419763955138-da2n4bek4noa42mokjeli9ah8pmtqp5t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.chataround",
+            "certificate_hash": "f191ef43cafa7b031d74c507aae852b1c42873b5"
+          }
+        },
+        {
+          "client_id": "419763955138-a8lb3bcou7hk67krp9eegq9haniuo9b5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQY6Z2TJGsaxFAQOhVBEmMYm49_tQ0Pvg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "419763955138-a8lb3bcou7hk67krp9eegq9haniuo9b5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419763955138:android:a3427db14b595011",
+        "android_client_info": {
+          "package_name": "com.delaroystudios.fragrancecart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "419763955138-db8j91gtp58hlcrigfrcd9rnj1eutalt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.delaroystudios.fragrancecart",
+            "certificate_hash": "f191ef43cafa7b031d74c507aae852b1c42873b5"
+          }
+        },
+        {
+          "client_id": "419763955138-a8lb3bcou7hk67krp9eegq9haniuo9b5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQY6Z2TJGsaxFAQOhVBEmMYm49_tQ0Pvg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "419763955138-a8lb3bcou7hk67krp9eegq9haniuo9b5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

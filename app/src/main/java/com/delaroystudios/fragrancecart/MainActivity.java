@@ -1,6 +1,7 @@
 package com.delaroystudios.fragrancecart;
 
 
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.database.Cursor;
@@ -15,6 +16,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -30,6 +32,7 @@ import com.joanzapata.iconify.widget.IconButton;
 
 import static com.delaroystudios.fragrancecart.R.id.cart_badge;
 import static com.delaroystudios.fragrancecart.data.FragranceContract.FragranceEntry.CART_TABLE;
+import static com.delaroystudios.fragrancecart.sync.FragranceSyncAdapter.getSyncAccount;
 
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
@@ -40,6 +43,10 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     private SQLiteDatabase mDb;
 
     private int mNotificationsCount = 0;
+    public static final String KEY_SYNC_REQUEST = "fragrancecart.delaroystudios.com.KEY_SYNC_REQUEST";
+    public static final String AUTHORITY = "com.delaroystudios.fragrancecart";
+
+    private static final String TAG = "MainActivity";
 
 
     @Override
@@ -63,6 +70,19 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         recyclerView.setAdapter(fragranceAdapter);
 
         getLoaderManager().initLoader(FRAGRANCE_LOADER,null,this);
+
+        Bundle customData = getIntent().getExtras();
+
+        if (customData != null) {
+
+
+            if(customData.getString(KEY_SYNC_REQUEST).equals("sync") ){
+
+                ContentResolver.requestSync(getSyncAccount(this), AUTHORITY, null);
+                Log.d(TAG, "SyncAdapter triggered: " );
+            }
+
+        }
 
 
 
