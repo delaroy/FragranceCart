@@ -43,9 +43,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     private SQLiteDatabase mDb;
 
     private int mNotificationsCount = 0;
-    public static final String KEY_SYNC_REQUEST = "fragrancecart.delaroystudios.com.KEY_SYNC_REQUEST";
-    public static final String AUTHORITY = "com.delaroystudios.fragrancecart";
-
     private static final String TAG = "MainActivity";
 
 
@@ -70,21 +67,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         recyclerView.setAdapter(fragranceAdapter);
 
         getLoaderManager().initLoader(FRAGRANCE_LOADER,null,this);
-
-        Bundle customData = getIntent().getExtras();
-
-        if (customData != null) {
-
-
-            if(customData.getString(KEY_SYNC_REQUEST).equals("sync") ){
-
-                ContentResolver.requestSync(getSyncAccount(this), AUTHORITY, null);
-                Log.d(TAG, "SyncAdapter triggered: " );
-            }
-
-        }
-
-
 
         new FetchCountTask().execute();
     }

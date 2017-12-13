@@ -63,7 +63,8 @@ public class FragranceSyncAdapter extends AbstractThreadedSyncAdapter {
         try {
 
             final String FRAGRANCE_URL =
-                    "http://unitypuzzlegame.com/fragrance/fragrance.json";
+                    "http://streekon.com/fragrances/fragrancecontroller.php?view=all";
+                   // "http://unitypuzzlegame.com/fragrance/fragrance.json";
 
             Uri builtUri = Uri.parse(FRAGRANCE_URL).buildUpon()
                     .build();
@@ -134,12 +135,12 @@ public class FragranceSyncAdapter extends AbstractThreadedSyncAdapter {
 
         final String BGS_FRAGRANCES = "fragrances";
 
-        final String BGS_FRAGRANCENAME = "fragranceName";
+        final String BGS_FRAGRANCENAME = "fragrancename";
         final String BGS_DESCRIPTION = "description";
-        final String BGS_IMAGEURL = "imageUrl";
+        final String BGS_IMAGEURL = "imageurl";
         final String BGS_PRICE = "price";
-        final String BGS_USERRATING = "userRating";
-        final String BGS_ITEMID = "itemid";
+        final String BGS_USERRATING = "userrating";
+        final String BGS_ITEMID = "fragranceid";
 
         try {
             JSONObject fragranceJson = new JSONObject(fragranceJsonStr);
@@ -148,21 +149,17 @@ public class FragranceSyncAdapter extends AbstractThreadedSyncAdapter {
 
             for (int i = 0; i < fragranceArray.length(); i++) {
 
-                String fragranceName;
-                String description;
-                String imageUrl;
-                Double price;
-                int userRating;
-                int itemId;
+                String fragranceName, description, imageUrl, price, userRating, itemId;
+
 
                 JSONObject fragranceDetails = fragranceArray.getJSONObject(i);
 
                 fragranceName = fragranceDetails.getString(BGS_FRAGRANCENAME);
                 description = fragranceDetails.getString(BGS_DESCRIPTION);
                 imageUrl = fragranceDetails.getString(BGS_IMAGEURL);
-                price = fragranceDetails.getDouble(BGS_PRICE);
-                userRating = fragranceDetails.getInt(BGS_USERRATING);
-                itemId = fragranceDetails.getInt(BGS_ITEMID);
+                price = fragranceDetails.getString(BGS_PRICE);
+                userRating = fragranceDetails.getString(BGS_USERRATING);
+                itemId = fragranceDetails.getString(BGS_ITEMID);
 
 
                 ContentValues fragranceValues = new ContentValues();
@@ -170,9 +167,9 @@ public class FragranceSyncAdapter extends AbstractThreadedSyncAdapter {
                 fragranceValues.put(FragranceContract.FragranceEntry.COLUMN_NAME, fragranceName);
                 fragranceValues.put(FragranceContract.FragranceEntry.COLUMN_DESCRIPTION, description);
                 fragranceValues.put(FragranceContract.FragranceEntry.COLUMN_IMAGE, imageUrl);
-                fragranceValues.put(FragranceContract.FragranceEntry.COLUMN_PRICE, price);
-                fragranceValues.put(FragranceContract.FragranceEntry.COLUMN_USERRATING, userRating);
-                fragranceValues.put(FragranceContract.FragranceEntry.COLUMN_ITEMID, itemId);
+                fragranceValues.put(FragranceContract.FragranceEntry.COLUMN_PRICE, Double.parseDouble(price));
+                fragranceValues.put(FragranceContract.FragranceEntry.COLUMN_USERRATING, Integer.parseInt(userRating));
+                fragranceValues.put(FragranceContract.FragranceEntry.COLUMN_ITEMID, Integer.parseInt(itemId));
 
                 mContentResolver.insert(FragranceContract.FragranceEntry.CONTENT_URI,  fragranceValues);
 
