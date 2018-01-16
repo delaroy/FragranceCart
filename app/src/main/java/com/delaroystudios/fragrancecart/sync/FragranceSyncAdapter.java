@@ -64,6 +64,7 @@ public class FragranceSyncAdapter extends AbstractThreadedSyncAdapter {
 
             final String FRAGRANCE_URL =
                     "http://unitypuzzlegame.com/fragrance/fragrance.json";
+                   // "http://unitypuzzlegame.com/fragrance/fragrance.json";
 
             Uri builtUri = Uri.parse(FRAGRANCE_URL).buildUpon()
                     .build();
@@ -133,6 +134,7 @@ public class FragranceSyncAdapter extends AbstractThreadedSyncAdapter {
             throws JSONException {
 
         final String BGS_FRAGRANCES = "fragrances";
+        final String MEN_SHOES = "menShoe";
 
         final String BGS_FRAGRANCENAME = "fragranceName";
         final String BGS_DESCRIPTION = "description";
@@ -141,9 +143,18 @@ public class FragranceSyncAdapter extends AbstractThreadedSyncAdapter {
         final String BGS_USERRATING = "userRating";
         final String BGS_ITEMID = "itemid";
 
+        final String MEN_SHOENAME = "shoeName";
+        final String MEN_SHOEDESCRIPTION = "description";
+        final String MEN_SHOEIMAGEURL = "imageUrl";
+        final String MEN_SHOEPRICE = "price";
+        final String MEN_SHOESIZE = "size";
+        final String MEN_SHOEUSERRATING = "userRating";
+
+
         try {
             JSONObject fragranceJson = new JSONObject(fragranceJsonStr);
             JSONArray fragranceArray = fragranceJson.getJSONArray(BGS_FRAGRANCES);
+            JSONArray menArray = fragranceJson.getJSONArray(MEN_SHOES);
 
 
             for (int i = 0; i < fragranceArray.length(); i++) {
@@ -179,6 +190,43 @@ public class FragranceSyncAdapter extends AbstractThreadedSyncAdapter {
                 Log.d(LOG_TAG, "Inserted Successfully " + fragranceValues );
             }
 
+            for (int i = 0; i < menArray.length(); i++) {
+
+                String menshoeName;
+                String description;
+                String imageUrl;
+                Double price;
+                String size;
+                int userRating;
+
+
+                JSONObject menDetails = menArray.getJSONObject(i);
+
+                menshoeName = menDetails.getString(MEN_SHOENAME);
+                description = menDetails.getString(MEN_SHOEDESCRIPTION);
+                imageUrl = menDetails.getString(MEN_SHOEIMAGEURL);
+                price = menDetails.getDouble(MEN_SHOEPRICE);
+                size = menDetails.getString(MEN_SHOESIZE);
+                userRating = menDetails.getInt(MEN_SHOEUSERRATING);
+
+
+
+                ContentValues menshoeValues = new ContentValues();
+
+                menshoeValues.put(FragranceContract.FragranceEntry.COLUMN_MENSHOENAME, menshoeName);
+                menshoeValues.put(FragranceContract.FragranceEntry.COLUMN_MENSHOEDESCRIPTION, description);
+                menshoeValues.put(FragranceContract.FragranceEntry.COLUMN_MENSHOEIMAGE, imageUrl);
+                menshoeValues.put(FragranceContract.FragranceEntry.COLUMN_MENSHOEPRICE, price);
+                menshoeValues.put(FragranceContract.FragranceEntry.COLUMN_MENSHOESIZE, size);
+                menshoeValues.put(FragranceContract.FragranceEntry.COLUMN_MENSHOEUSERRATING, userRating);
+
+
+                mContentResolver.insert(FragranceContract.FragranceEntry.CONTENT_URI_MENSHOE,  menshoeValues);
+
+                Log.d(LOG_TAG, "Inserted Successfully " + menshoeValues );
+            }
+
+            Log.d(LOG_TAG, "Inserted men shoes " + menArray.length() );
             Log.d(LOG_TAG, "Inserted Successfully " + fragranceArray.length() );
 
         } catch (JSONException e) {

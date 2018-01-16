@@ -105,6 +105,136 @@
       "price": 30.79,
       "userRating": 5
     }
+  ],
+  "menShoe": [
+    {
+      "shoeName": "HKIMDL Men Shoes",
+      "description": "HKIMDL leather oxford shoes comfortable for men (Brown)",
+      "imageUrl": "HKIMDLOxford Shoes.png",
+      "price": 23000,
+      "size": 41,
+      "userRating": 5
+    },
+    {
+      "shoeName": "LALANG Shoe (Brown)",
+      "description": "A comfortable brand new and high quality fashion men shoe with PU leather lace up (brown)",
+      "imageUrl": "LALANG shoe Brown.png",
+      "price": 20000,
+      "size": 43,
+      "userRating": 4
+    },
+    {
+      "shoeName": "Men pointed shinny shoe",
+      "description": "A shinny leather shoe with a pointed toe shape and lace-up fastening (Blue).",
+      "imageUrl": "shinny leather.png",
+      "price": 22000,
+      "size": 42,
+      "userRating": 5
+    },
+    {
+      "shoeName": "Men sport shoe",
+      "description": "A lightweight, comfortable, breathable and durable sport shoe for men (White)",
+      "imageUrl": "ports Shoes.png",
+      "price": 13000,
+      "size": 41,
+      "userRating": 5
+    },
+    {
+      "shoeName": "Men High Top Sneakers",
+      "description": "A high top round toe shape sneaker for men (white)",
+      "imageUrl": "High Top Sneakers.png",
+      "price": 12000,
+      "size": 40,
+      "userRating": 4
+    },
+    {
+      "shoeName": "Oxford leather shoe (Brown)",
+      "description": "A quality leather business shoe with a solid pattern and pointed shape suitable for spring, summer, autumn season.",
+      "imageUrl": "oxford leather brown.png",
+      "price": 15000,
+      "size": 42,
+      "userRating": 5
+    },
+    {
+      "shoeName": "LALANG Casual Sneakers",
+      "description": "A high top casual sneakers with lace up closure suitable for men",
+      "imageUrl": "LALANG sneakers.png",
+      "price": 11500,
+      "size": 41,
+      "userRating": 4
+    },
+    {
+      "shoeName": "Flat european casual shoe",
+      "description": "A casual leather shoe with cowhells outsole material and fastening lace-up (Brown)",
+      "imageUrl": "European oxford b.png",
+      "price": 10500,
+      "size": 42,
+      "userRating": 4
+    },
+    {
+      "shoeName": "Flat european casual shoe",
+      "description": "A casual leather shoe with cowhells outsole material and fastening lace-up (Black)",
+      "imageUrl": "European oxford.png",
+      "price": 10500,
+      "size": 41,
+      "userRating": 4
+    },
+    {
+      "shoeName": "PINSV Tassel Loafer(Brown)",
+      "description": "A comfortable and breathable shoe suitable for all occasion. It is made of a quality leather material",
+      "imageUrl": "PINSV Loafers",
+      "price": 17000,
+      "size": 40,
+      "userRating": 4
+    },
+    {
+      "shoeName": "Men leather shoe",
+      "description": "A Business & Casual shoe which Shows charming white-collar work life time. It is Breathable and comfortable inside.",
+      "imageUrl": "Leather Shoes.png",
+      "price": 15000,
+      "size": 43,
+      "userRating": 4
+    },
+    {
+      "shoeName": "Oxford leather shoe (Black)",
+      "description": "A quality leather business shoe with a solid pattern and pointed shape suitable for spring, summer, autumn season.",
+      "imageUrl": "Oxford leather black.png",
+      "price": 15000,
+      "size": 41,
+      "userRating": 5
+    },
+    {
+      "shoeName": "PINSV Genuine Loafer",
+      "description": "The PINSV Genuine Loafer is comfortable to wear for all occasion. (Brown)",
+      "imageUrl": "PINSV Loafers B.png",
+      "price": 30000,
+      "size": 43,
+      "userRating": 4
+    },
+    {
+      "shoeName": "PINSV Patent Leather Loafer",
+      "description": "It is comfortable and suitable for all season",
+      "imageUrl": "PINSV Patent  Shoes.png",
+      "price": 20000,
+      "size": 43,
+      "userRating": 5
+    },
+    {
+      "shoeName": "Breathable camouflage shoe (Army green)",
+      "description": "A casual camouflage men sneakers (Army green)",
+      "imageUrl": "Camouflage Army Green.png",
+      "price": 16000,
+      "size": 41,
+      "userRating": 5
+    },
+    {
+      "shoeName": "Men high-cut sneaker",
+      "description": "The high-cut sneaker is a casual, breathable and comfortable to wear.It is made of good quality.",
+      "imageUrl": "High-Cut Sneaker.png",
+      "price": 25000,
+      "size": 44,
+      "userRating": 4
+    }
   ]
 }
 

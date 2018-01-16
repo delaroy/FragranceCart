@@ -33,6 +33,8 @@ public class FragranceContract {
 
     public static final String PATH_WISH= "wish-path";
 
+    public final static String MEN_SHOE = "men_shoe";
+
 
     /**
      * Inner class that defines constant values for the fragrance database table.
@@ -46,6 +48,10 @@ public class FragranceContract {
         public static final Uri CONTENT_URI_CART = Uri.withAppendedPath(BASE_CONTENT_URI, PATH_CART);
 
         public static final Uri CONTENT_URI_WISH = Uri.withAppendedPath(BASE_CONTENT_URI, PATH_WISH);
+
+        public static final Uri CONTENT_URI_MENSHOE = Uri.withAppendedPath(BASE_CONTENT_URI, MEN_SHOE);
+
+
 
         /**
          * The MIME type of the {@link #CONTENT_URI} for a list of fragrance.
@@ -67,6 +73,8 @@ public class FragranceContract {
 
         //wishlist table name
         public final static String WISH_TABLE = "wishlist";
+
+        public final static String MENSHOE_TABLE = "menshoe";
 
         /**
          * Unique ID number for the fragrance (only for use in the database table).
@@ -104,6 +112,15 @@ public class FragranceContract {
         public final static String COLUMN_WISH_IMAGE = "wish_imageurl";
         public final static String COLUMN_WISH_PRICE = "wish_price";
         public final static String COLUMN_WISH_USERRATING = "wish_userrating";
+
+        //COLUMNS FOR SHOES
+        public final static String _MENSHOEID = BaseColumns._ID;
+        public final static String COLUMN_MENSHOENAME = "menshoename";
+        public final static String COLUMN_MENSHOEDESCRIPTION = "menshoedescription";
+        public final static String COLUMN_MENSHOEIMAGE = "menshoeimage";
+        public final static String COLUMN_MENSHOEPRICE = "menshoeprice";
+        public final static String COLUMN_MENSHOESIZE = "menshoesize";
+        public final static String COLUMN_MENSHOEUSERRATING = "menshoeuserrating";
 
     }
 

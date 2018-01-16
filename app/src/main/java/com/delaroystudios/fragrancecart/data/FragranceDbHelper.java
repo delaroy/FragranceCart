@@ -78,11 +78,21 @@ public class FragranceDbHelper extends SQLiteOpenHelper {
                 FragranceContract.FragranceEntry.COLUMN_WISH_PRICE + " REAL NOT NULL, " +
                 FragranceContract.FragranceEntry.COLUMN_WISH_USERRATING + " INTEGER NOT NULL " + " );";
 
+        final String SQL_CREATE_MENSHOE_TABLE = "CREATE TABLE " + FragranceContract.FragranceEntry.MENSHOE_TABLE + " (" +
+                FragranceContract.FragranceEntry._MENSHOEID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                FragranceContract.FragranceEntry.COLUMN_MENSHOENAME + " TEXT NOT NULL, " +
+                FragranceContract.FragranceEntry.COLUMN_MENSHOEDESCRIPTION + " TEXT NOT NULL, " +
+                FragranceContract.FragranceEntry.COLUMN_MENSHOEIMAGE + " TEXT NOT NULL, " +
+                FragranceContract.FragranceEntry.COLUMN_MENSHOEPRICE + " REAL NOT NULL, " +
+                FragranceContract.FragranceEntry.COLUMN_MENSHOESIZE + " TEXT NOT NULL, " +
+                FragranceContract.FragranceEntry.COLUMN_MENSHOEUSERRATING + " INTEGER NOT NULL " + " );";
+
 
 
         db.execSQL(SQL_CREATE_FRAGRANCE_TABLE);
         db.execSQL(SQL_CREATE_CART_FRAGRANCE_TABLE);
         db.execSQL(SQL_CREATE_WISHLIST_FRAGRANCE_TABLE);
+        db.execSQL(SQL_CREATE_MENSHOE_TABLE);
         Log.d(TAG, "Database Created Successfully" );
 
 
@@ -103,6 +113,7 @@ public class FragranceDbHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + FragranceContract.FragranceEntry.TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + FragranceContract.FragranceEntry.CART_TABLE);
         db.execSQL("DROP TABLE IF EXISTS " + FragranceContract.FragranceEntry.WISH_TABLE);
+        db.execSQL("DROP TABLE IF EXISTS " + FragranceContract.FragranceEntry.MENSHOE_TABLE);
         onCreate(db);
     }
 
